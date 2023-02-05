@@ -84,4 +84,3 @@ for (var i=0; i<files.length;i++){
 //         // 忽略报错
 //     }
 // }
-process.exit()
