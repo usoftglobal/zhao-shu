@@ -45,7 +45,7 @@ for (var i=0; i<files.length;i++){
         const book = books[j]
 
         // 移动文件并补充扩展名
-        var sourceFile = path.join(sourceDir, book.zlibrary_id);
+        var sourceFile = sourceDir+"/"+book.zlibrary_id;
         var destPath = path.join(new_dir_name, book.zlibrary_id + "." + book.extension);
         var readStream = fs.createReadStream(sourceFile);
         var writeStream = fs.createWriteStream(destPath);
