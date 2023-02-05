@@ -28,19 +28,20 @@ for (var i=0; i<filesLen;i++){
     const pilimi_torrent = files_dir + ".torrent"
     const books = await db.syncQuery('select zlibrary_id, title, extension, pilimi_torrent from books where pilimi_torrent="'+pilimi_torrent+'"')
 
+    // 新目录名称
+    const new_dir_name = (files_dir).replace("pilimi-zlib-", "")
+    
+    const pro = (i+1)+"/"+filesLen
+
+    console.log(pro + "开始处理", new_dir_name)
+
     // 没有书籍跳过处理
     if (books.length == 0) {
+        console.log(pro + "没有书籍，处理完成", new_dir_name)
         continue
     }
 
     const sourceDir = downloadPath + files_dir
-
-    // 新目录名称
-    const new_dir_name = (files_dir).replace("pilimi-zlib-", "")
-    
-    const pro = i+"/"+filesLen
-
-    console.log(pro + "开始处理", new_dir_name)
 
     // 新建目录
     await db.syncMkdir(new_dir_name)
