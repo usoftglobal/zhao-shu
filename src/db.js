@@ -1,4 +1,5 @@
 import mysql from "mysql"
+import fs from "fs"
 
 export class Db {
 
@@ -31,6 +32,16 @@ export class Db {
                 if (err) rej(err);
                 else res(result);
             });
+        });
+    }
+
+    // 同步创建目录
+    syncMkdir(dirname) {
+        return new Promise((res, rej) => {
+            fs.mkdir(dirname,function(error){
+                if (error) rej(error);
+                else res(1)
+            })
         });
     }
 
