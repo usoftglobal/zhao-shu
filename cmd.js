@@ -58,8 +58,9 @@ for (var i=0; i<filesLen;i++){
         readStream.pipe(writeStream);
 
         // 标记已处理
+        console.log(pro + " " + book.title + " 处理完成")
     }
-    console.log(pro + "处理完成", new_dir_name)
+    console.log(pro + "所有处理完成", new_dir_name)
 }
 
 // const books = await db.syncQuery('select title, extension, author, count(zlibrary_id) as c from books group by title, extension,author having c >1 order by c desc')
