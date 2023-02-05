@@ -10,13 +10,13 @@ const newParh = 'C:\\Users\\Administrator\\Desktop\\zhao-shu\\'
 var files = [
     "pilimi-zlib-120000-419999",
     "pilimi-zlib-5330000-5359999",
-    // "pilimi-zlib-5380000-5449999",
-    // "pilimi-zlib-2830000-5239999",
-    // "pilimi-zlib-2380000-2829999",
-    // "pilimi-zlib-420000-2379999",
-    // "pilimi-zlib-5240000-5329999",
-    // "pilimi-zlib-0-119999",
-    // "pilimi-zlib-5360000-5379999",
+    "pilimi-zlib-5380000-5449999",
+    "pilimi-zlib-2830000-5239999",
+    "pilimi-zlib-2380000-2829999",
+    "pilimi-zlib-420000-2379999",
+    "pilimi-zlib-5240000-5329999",
+    "pilimi-zlib-0-119999",
+    "pilimi-zlib-5360000-5379999",
 ]
 
 var filesLen = files.length
