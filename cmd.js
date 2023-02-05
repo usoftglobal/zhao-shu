@@ -5,6 +5,7 @@ import path from 'path';
 const db = new Db()
 
 const downloadPath = 'C:\\Users\\Administrator\\Downloads\\'
+const newParh = 'C:\\Users\\Administrator\\Desktop\\zhao-shu\\'
 
 var files = [
     "pilimi-zlib-120000-419999",
@@ -46,7 +47,7 @@ for (var i=0; i<files.length;i++){
 
         // 移动文件并补充扩展名
         var sourceFile = sourceDir+"/"+book.zlibrary_id;
-        var destPath = path.join(new_dir_name, book.zlibrary_id + "." + book.extension);
+        var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         var readStream = fs.createReadStream(sourceFile);
         var writeStream = fs.createWriteStream(destPath);
         readStream.pipe(writeStream);
