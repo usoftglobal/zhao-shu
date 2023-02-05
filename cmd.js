@@ -19,7 +19,9 @@ var files = [
     // "pilimi-zlib-5360000-5379999",
 ]
 
-for (var i=0; i<files.length;i++){
+var filesLen = files.length
+
+for (var i=0; i<filesLen;i++){
 
     const files_dir = files[i]
 
@@ -35,17 +37,20 @@ for (var i=0; i<files.length;i++){
 
     // 新目录名称
     const new_dir_name = (files_dir).replace("pilimi-zlib-", "")
-    console.log("开始处理", new_dir_name)
+    
+    const pro = i+"/"+filesLen
+
+    console.log(pro + "开始处理", new_dir_name)
 
     // 新建目录
     await db.syncMkdir(new_dir_name)
 
-    // 移动文件并重命名、标记已处理
+    // 复制文件并重命名、标记已处理
     for (var j=0; j < books.length; j++){
 
         const book = books[j]
 
-        // 移动文件并补充扩展名
+        // 复制文件并补充扩展名
         var sourceFile = sourceDir+"/"+book.zlibrary_id;
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         var readStream = fs.createReadStream(sourceFile);
@@ -54,6 +59,7 @@ for (var i=0; i<files.length;i++){
 
         // 标记已处理
     }
+    console.log(pro + "处理完成", new_dir_name)
 }
 
 // const books = await db.syncQuery('select title, extension, author, count(zlibrary_id) as c from books group by title, extension,author having c >1 order by c desc')
