@@ -31,8 +31,8 @@ var files = [
 
     // "pilimi-zlib-5730000-5749999",
     // "pilimi-zlib-5750000-5769999",
-    "pilimi-zlib-5770000-5789999",
-    // "pilimi-zlib-5790000-5809999",
+    // "pilimi-zlib-5770000-5789999",
+    "pilimi-zlib-5790000-5809999",
     // "pilimi-zlib-5810000-6039999",
     // "pilimi-zlib-6040000-6069999",
     // "pilimi-zlib-6070000-6129999",
@@ -82,7 +82,7 @@ for (var i=0; i<filesLen;i++){
         readStream.pipe(writeStream);
 
         // 标记已处理
-        console.log(pro + " " + book.title + " 处理完成")
+        console.log(pro + " " + book.title + " ["+ (j+1)+"/" + books.length +"] 处理完成")
     }
     console.log(pro + "所有处理完成", new_dir_name)
 }
