@@ -30,8 +30,8 @@ var files = [
     // "pilimi-zlib-5710000-5729999",
 
     // "pilimi-zlib-5730000-5749999",
-    "pilimi-zlib-5750000-5769999",
-    // "pilimi-zlib-5770000-5789999",
+    // "pilimi-zlib-5750000-5769999",
+    "pilimi-zlib-5770000-5789999",
     // "pilimi-zlib-5790000-5809999",
     // "pilimi-zlib-5810000-6039999",
     // "pilimi-zlib-6040000-6069999",
