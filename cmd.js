@@ -8,15 +8,26 @@ const downloadPath = 'C:\\Users\\Administrator\\Downloads\\'
 const newParh = 'C:\\Users\\Administrator\\Desktop\\zhao-shu\\'
 
 var files = [
-    "pilimi-zlib-120000-419999",
-    "pilimi-zlib-5330000-5359999",
-    "pilimi-zlib-5380000-5449999",
-    "pilimi-zlib-2830000-5239999",
-    "pilimi-zlib-2380000-2829999",
-    "pilimi-zlib-420000-2379999",
-    "pilimi-zlib-5240000-5329999",
-    "pilimi-zlib-0-119999",
-    "pilimi-zlib-5360000-5379999",
+    // "pilimi-zlib-120000-419999",
+    // "pilimi-zlib-5330000-5359999",
+    // "pilimi-zlib-5380000-5449999",
+    // "pilimi-zlib-2830000-5239999",
+    // "pilimi-zlib-2380000-2829999",
+    // "pilimi-zlib-420000-2379999",
+    // "pilimi-zlib-5240000-5329999",
+    // "pilimi-zlib-0-119999",
+    // "pilimi-zlib-5360000-5379999",
+
+    "pilimi-zlib-5450000-5479999",
+    "pilimi-zlib-5480000-5499999",
+    "pilimi-zlib-5500000-5519999",
+    "pilimi-zlib-5520000-5549999",
+    "pilimi-zlib-5550000-5579999",
+    "pilimi-zlib-5580000-5609999",
+    "pilimi-zlib-5610000-5639999",
+    "pilimi-zlib-5640000-5659999",
+    "pilimi-zlib-5660000-5709999",
+    "pilimi-zlib-5710000-5729999",
 ]
 
 var filesLen = files.length
