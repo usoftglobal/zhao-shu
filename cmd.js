@@ -1,5 +1,5 @@
 import {Db} from "./src/db.js"
-import fs from 'fs';
+import fs from 'graceful-fs';
 import path from 'path';
 
 const db = new Db()
