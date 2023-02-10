@@ -103,7 +103,7 @@ for (var i=0; i<filesLen;i++){
     const books = await db.syncQuery('select zlibrary_id, title, extension, pilimi_torrent from books where pilimi_torrent="'+pilimi_torrent+'"')
 
     // 新目录名称
-    const new_dir_name = (files_dir).replace("pilimi-zlib-", "")
+    const new_dir_name = (files_dir).replace("pilimi-zlib", "")
     
     const pro = (i+1)+"/"+filesLen
 
