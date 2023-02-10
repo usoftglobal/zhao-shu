@@ -1,11 +1,11 @@
 import {Db} from "./src/db.js"
-import fs from 'graceful-fs';
+import fs from 'fs';
 import path from 'path';
 
 const db = new Db()
 
-const downloadPath = 'C:\\Users\\Administrator\\Downloads\\'
-const newParh = 'C:\\Users\\Administrator\\Desktop\\zhao-shu\\'
+const downloadPath = 'D:\\'
+const newParh = 'D:\\zhao-shu\\'
 
 var files = [
     // "pilimi-zlib-120000-419999",
@@ -128,9 +128,12 @@ for (var i=0; i<filesLen;i++){
         // 复制文件并补充扩展名
         var sourceFile = sourceDir+"/"+book.zlibrary_id;
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
-        var readStream = fs.createReadStream(sourceFile);
-        var writeStream = fs.createWriteStream(destPath);
-        readStream.pipe(writeStream);
+        
+        fs.copyFileSync(sourceFile, destPath)
+        
+        // var readStream = fs.createReadStream(sourceFile);
+        // var writeStream = fs.createWriteStream(destPath);
+        // readStream.pipe(writeStream);
 
         // 标记已处理
         console.log(pro + " " + book.title + " ["+ (j+1)+"/" + books.length +"] 处理完成")
