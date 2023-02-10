@@ -89,8 +89,8 @@ var files = [
     // "pilimi-zlib2-0-14679999-extra",
     // "pilimi-zlib2-14680000-14999999",
     "pilimi-zlib2-15000000-15679999",
-    "pilimi-zlib2-15680000-16179999",
-    "pilimi-zlib2-16180000-16379999",
+    //"pilimi-zlib2-15680000-16179999",
+    //"pilimi-zlib2-16180000-16379999",
 ]
 
 var filesLen = files.length
