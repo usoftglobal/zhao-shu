@@ -139,8 +139,11 @@ for (var i=0; i<filesLen;i++){
         var sourceFile = sourceDir+"/"+book.zlibrary_id;
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         
-        fs.copyFileSync(sourceFile, destPath)
-        
+        // 检测文件是否存在
+        if (!fs.existsSync(destPath)) {
+            fs.copyFileSync(sourceFile, destPath)
+        }
+
         // var readStream = fs.createReadStream(sourceFile);
         // var writeStream = fs.createWriteStream(destPath);
         // readStream.pipe(writeStream);
