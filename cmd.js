@@ -89,8 +89,18 @@ var files = [
     // "pilimi-zlib2-0-14679999-extra",
     // "pilimi-zlib2-14680000-14999999",
     // "pilimi-zlib2-15000000-15679999",
-    "pilimi-zlib2-15680000-16179999",
-    //"pilimi-zlib2-16180000-16379999",
+
+
+    "pilimi-zlib2-15680000-16179999",  // 已解压
+    "pilimi-zlib2-16380000-16469999",  // 已解压
+    "pilimi-zlib2-16860000-16959999",  // 已解压
+    "pilimi-zlib2-17060000-17149999",  // 已解压
+    "pilimi-zlib2-17690000-17779999",  // 已解压
+
+    // "pilimi-zlib2-17600000-17689999",  // 解压中
+
+    // "pilimi-zlib2-17150000-17249999", // 未完成
+    //"pilimi-zlib2-16180000-16379999", // 未完成
 ]
 
 var filesLen = files.length
