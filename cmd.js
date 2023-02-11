@@ -140,9 +140,11 @@ for (var i=0; i<filesLen;i++){
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         
         // 检测文件是否存在
-        if (!fs.existsSync(destPath)) {
-            fs.copyFileSync(sourceFile, destPath)
-        }
+        // if (!fs.existsSync(destPath)) {
+        //     fs.copyFileSync(sourceFile, destPath)
+        // }
+
+        fs.copyFileSync(sourceFile, destPath)
 
         // var readStream = fs.createReadStream(sourceFile);
         // var writeStream = fs.createWriteStream(destPath);
