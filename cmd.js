@@ -4,8 +4,8 @@ import path from 'path';
 
 const db = new Db()
 
-const downloadPath = 'D:\\'
-const newParh = 'D:\\zhao-shu\\'
+const downloadPath = '/Users/geeker.eth/Desktop/'
+const newParh = '/Users/geeker.eth/Desktop/zhao-shu/'
 
 var files = [
     // "pilimi-zlib-120000-419999",
@@ -91,16 +91,23 @@ var files = [
     // "pilimi-zlib2-15000000-15679999",
 
 
-    // "pilimi-zlib2-15680000-16179999",  // 已解压
-    // "pilimi-zlib2-16380000-16469999",  // 已解压
-    // "pilimi-zlib2-16860000-16959999",  // 已解压
-    // "pilimi-zlib2-17060000-17149999",  // 已解压
-    // "pilimi-zlib2-17690000-17779999",  // 已解压
+    // "pilimi-zlib2-15680000-16179999",
+    // "pilimi-zlib2-16380000-16469999",
+    // "pilimi-zlib2-16860000-16959999",
+    // "pilimi-zlib2-17060000-17149999",
+    // "pilimi-zlib2-17690000-17779999",
+    // "pilimi-zlib2-17600000-17689999",
+    // "pilimi-zlib2-16180000-16379999",
 
-    "pilimi-zlib2-17600000-17689999",  // 已解压
-    "pilimi-zlib2-16180000-16379999",  // 已解压
+    // "pilimi-zlib2-21940000-22019999",
+    // "pilimi-zlib2-22400000-22433982",
 
-    // "pilimi-zlib2-17150000-17249999", // 未完成
+    "pilimi-zlib2-16580000-16669999",
+    "pilimi-zlib2-21590000-21689999",
+    "pilimi-zlib2-22200000-22299999",
+    "pilimi-zlib2-22300000-22399999",
+
+    // "pilimi-zlib2-22120000-22199999" , // 解压中
 ]
 
 var filesLen = files.length
