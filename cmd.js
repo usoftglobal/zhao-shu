@@ -5,7 +5,7 @@ import path from 'path';
 const db = new Db()
 
 const downloadPath = 'D:\\'
-const newParh = 'D:\\zhao-shu\'
+const newParh = 'D:\\zhao-shu\\'
 
 var files = [
     // "pilimi-zlib-120000-419999",
