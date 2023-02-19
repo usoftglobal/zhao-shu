@@ -102,12 +102,13 @@ var files = [
     // "pilimi-zlib2-21940000-22019999",
     // "pilimi-zlib2-22400000-22433982",
 
-    "pilimi-zlib2-16580000-16669999",
-    "pilimi-zlib2-21590000-21689999",
-    "pilimi-zlib2-22200000-22299999",
-    "pilimi-zlib2-22300000-22399999",
+    // "pilimi-zlib2-16580000-16669999",
+    // "pilimi-zlib2-21590000-21689999",
+    // "pilimi-zlib2-22200000-22299999",
+    // "pilimi-zlib2-22300000-22399999",
 
-    // "pilimi-zlib2-22120000-22199999" , // 解压中
+    "pilimi-zlib2-22120000-22199999" ,
+    
 ]
 
 var filesLen = files.length
