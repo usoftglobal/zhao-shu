@@ -4,8 +4,11 @@ import path from 'path';
 
 const db = new Db()
 
-const downloadPath = 'E:\\'
-const newParh = 'E:\\zhao-shu\\'
+const downloadPath = 'C:\\Users\\cuizi\\Documents\\'
+const newParh = 'C:\\Users\\cuizi\\Documents\\zhao-shu'
+
+// const downloadPath = 'D:\\'
+// const newParh = 'D:\\zhao-shu'
 
 var files = [
     // "pilimi-zlib-120000-419999",
@@ -112,7 +115,9 @@ var files = [
     // "pilimi-zlib2-17860000-17949999",
     // "pilimi-zlib2-16960000-17059999",
     // "pilimi-zlib2-16670000-16759999",
-    "pilimi-zlib2-21230000-21319999",
+    // "pilimi-zlib2-21230000-21319999",
+
+    "pilimi-zlib2-16760000-16859999"
     
 ]
 
