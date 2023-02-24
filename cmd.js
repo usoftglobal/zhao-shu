@@ -154,7 +154,7 @@ for (var i=0; i<filesLen;i++){
         const book = books[j]
 
         // 复制文件并补充扩展名
-        var sourceFile = sourceDir+"/"+book.zlibrary_id;
+        var sourceFile = sourceDir+"\\"+book.zlibrary_id;
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         
         // 检测文件是否存在
