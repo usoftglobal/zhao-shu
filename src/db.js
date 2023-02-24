@@ -5,7 +5,7 @@ export class Db {
 
     constructor() {
         this.connection = mysql.createConnection({
-            host: '192.168.31.1',
+            host: '192.168.1.36',
             user: 'root',
             password: 'Apple1992',
             database: 'zhao-shu',
