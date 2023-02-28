@@ -126,11 +126,11 @@ var files = [
     // "pilimi-zlib2-17340000-17469999",
     // "pilimi-zlib2-19330000-21079999",
     
+    // "pilimi-zlib2-18810000-19019999",
+    
     // 正在处理
     // "pilimi-zlib2-17470000-17599999",
-    // "pilimi-zlib2-17950000-18039999",
-
-    "pilimi-zlib2-18810000-19019999"
+    "pilimi-zlib2-17950000-18039999",
     
 ]
 
@@ -159,7 +159,9 @@ for (var i=0; i<filesLen;i++){
     const sourceDir = downloadPath + files_dir
 
     // 新建目录
-    await db.syncMkdir(new_dir_name)
+    if (!fs.existsSync(new_dir_name)) {
+        await db.syncMkdir(new_dir_name)
+    }
 
     // 复制文件并重命名、标记已处理
     for (var j=0; j < books.length; j++){
@@ -171,12 +173,10 @@ for (var i=0; i<filesLen;i++){
         var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
         
         // 检测文件是否存在
-        // if (!fs.existsSync(destPath)) {
-        //     fs.copyFileSync(sourceFile, destPath)
-        // }
-
-        fs.copyFileSync(sourceFile, destPath)
-
+        if (!fs.existsSync(destPath)) {
+            fs.copyFileSync(sourceFile, destPath)
+        }
+        
         // var readStream = fs.createReadStream(sourceFile);
         // var writeStream = fs.createWriteStream(destPath);
         // readStream.pipe(writeStream);
