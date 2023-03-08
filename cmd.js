@@ -145,8 +145,10 @@ var files = [
     // "pilimi-zlib2-18130000-18209999",
     // "pilimi-zlib2-18320000-18399999",
 
-    "pilimi-zlib2-22050000-22069999",
-    "pilimi-zlib2-22100000-22119999"
+    // "pilimi-zlib2-22050000-22069999",
+    // "pilimi-zlib2-22100000-22119999",
+
+    "pilimi-zlib2-18610000-18699999"
 ]
 
 var filesLen = files.length
