@@ -8,10 +8,98 @@ const db = new Db()
 // const newParh = 'C:\\Users\\cuizi\\Documents\\zhao-shu'
 
 const downloadPath = 'D:\\'
-const newParh = 'D:\\zhao-shu'
+const newParh = 'F:\\'
 
 var files = [
-    // "pilimi-zlib-120000-419999",
+    "pilimi-zlib2-18510000-18609999",
+    "pilimi-zlib2-21320000-21399999"
+]
+
+var filesLen = files.length
+
+for (var i=0; i<filesLen;i++){
+
+    const files_dir = files[i]
+
+    const pilimi_torrent = files_dir + ".torrent"
+    const books = await db.syncQuery('select zlibrary_id, title, extension, pilimi_torrent from books where pilimi_torrent="'+pilimi_torrent+'"')
+
+    // 新目录名称
+    const new_dir_name = (files_dir).replace("pilimi-zlib", "")
+    
+    const pro = (i+1)+"/"+filesLen
+
+    console.log(pro + "开始处理", new_dir_name)
+
+    // 没有书籍跳过处理
+    if (books.length == 0) {
+        console.log(pro + "没有书籍，处理完成", new_dir_name)
+        continue
+    }
+
+    const sourceDir = downloadPath + files_dir
+
+    // 新建目录
+    if (!fs.existsSync(new_dir_name)) {
+        await db.syncMkdir(new_dir_name)
+    }
+
+    // 复制文件并重命名、标记已处理
+    for (var j=0; j < books.length; j++){
+
+        const book = books[j]
+
+        // 复制文件并补充扩展名
+        var sourceFile = sourceDir+"/"+book.zlibrary_id;
+        var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
+        
+        // 检测文件是否存在
+        if (!fs.existsSync(destPath)) {
+            fs.copyFileSync(sourceFile, destPath)
+        }
+        
+        // var readStream = fs.createReadStream(sourceFile);
+        // var writeStream = fs.createWriteStream(destPath);
+        // readStream.pipe(writeStream);
+
+        // 标记已处理
+        console.log(pro + " " + book.title + " ["+ (j+1)+"/" + books.length +"] 处理完成")
+    }
+    console.log(pro + "所有处理完成", new_dir_name)
+}
+
+// const books = await db.syncQuery('select title, extension, author, count(zlibrary_id) as c from books group by title, extension,author having c >1 order by c desc')
+
+// for(var i=0; i<books.length;i++) {
+//     const element = books[i];
+
+//     try {
+        
+//         // 单引号不支持
+//         // const cond = "title='" + element.title + "' and author='" + element.author + "' and extension='" + element.extension + "'"
+        
+//         // 双引号不支持
+//         const cond = 'title="' + element.title + '" and author="' + element.author + '" and extension="' + element.extension + '"'
+        
+//         const fin = await db.syncQuery(
+//             //"select zlibrary_id from books where "+cond+" order by year desc, filesize desc limit 1"
+//             'select zlibrary_id from books where '+cond+' order by year desc, filesize desc limit 1'
+//         )
+
+//         // const sql = "delete from books where "+ cond +" and zlibrary_id <>" + fin[0].zlibrary_id
+//         const sql = 'delete from books where '+ cond +' and zlibrary_id <>' + fin[0].zlibrary_id
+
+//         console.log("开始执行", element.title, sql)
+
+//         await db.syncDelete(sql)
+//     } catch (error) {
+//         // 忽略报错
+//     }
+// }
+
+/*
+ 历史
+ // "pilimi-zlib-120000-419999",
     // "pilimi-zlib-5330000-5359999",
     // "pilimi-zlib-5380000-5449999",
     // "pilimi-zlib-2830000-5239999",
@@ -151,87 +239,5 @@ var files = [
     // "pilimi-zlib2-18610000-18699999"
     // "pilimi-zlib2-21080000-21179999"
     // "pilimi-zlib2-21180000-21229999",
-    "pilimi-zlib2-21400000-21489999"
-]
-
-var filesLen = files.length
-
-for (var i=0; i<filesLen;i++){
-
-    const files_dir = files[i]
-
-    const pilimi_torrent = files_dir + ".torrent"
-    const books = await db.syncQuery('select zlibrary_id, title, extension, pilimi_torrent from books where pilimi_torrent="'+pilimi_torrent+'"')
-
-    // 新目录名称
-    const new_dir_name = (files_dir).replace("pilimi-zlib", "")
-    
-    const pro = (i+1)+"/"+filesLen
-
-    console.log(pro + "开始处理", new_dir_name)
-
-    // 没有书籍跳过处理
-    if (books.length == 0) {
-        console.log(pro + "没有书籍，处理完成", new_dir_name)
-        continue
-    }
-
-    const sourceDir = downloadPath + files_dir
-
-    // 新建目录
-    if (!fs.existsSync(new_dir_name)) {
-        await db.syncMkdir(new_dir_name)
-    }
-
-    // 复制文件并重命名、标记已处理
-    for (var j=0; j < books.length; j++){
-
-        const book = books[j]
-
-        // 复制文件并补充扩展名
-        var sourceFile = sourceDir+"/"+book.zlibrary_id;
-        var destPath = path.join(newParh, new_dir_name, book.zlibrary_id + "." + book.extension);
-        
-        // 检测文件是否存在
-        if (!fs.existsSync(destPath)) {
-            fs.copyFileSync(sourceFile, destPath)
-        }
-        
-        // var readStream = fs.createReadStream(sourceFile);
-        // var writeStream = fs.createWriteStream(destPath);
-        // readStream.pipe(writeStream);
-
-        // 标记已处理
-        console.log(pro + " " + book.title + " ["+ (j+1)+"/" + books.length +"] 处理完成")
-    }
-    console.log(pro + "所有处理完成", new_dir_name)
-}
-
-// const books = await db.syncQuery('select title, extension, author, count(zlibrary_id) as c from books group by title, extension,author having c >1 order by c desc')
-
-// for(var i=0; i<books.length;i++) {
-//     const element = books[i];
-
-//     try {
-        
-//         // 单引号不支持
-//         // const cond = "title='" + element.title + "' and author='" + element.author + "' and extension='" + element.extension + "'"
-        
-//         // 双引号不支持
-//         const cond = 'title="' + element.title + '" and author="' + element.author + '" and extension="' + element.extension + '"'
-        
-//         const fin = await db.syncQuery(
-//             //"select zlibrary_id from books where "+cond+" order by year desc, filesize desc limit 1"
-//             'select zlibrary_id from books where '+cond+' order by year desc, filesize desc limit 1'
-//         )
-
-//         // const sql = "delete from books where "+ cond +" and zlibrary_id <>" + fin[0].zlibrary_id
-//         const sql = 'delete from books where '+ cond +' and zlibrary_id <>' + fin[0].zlibrary_id
-
-//         console.log("开始执行", element.title, sql)
-
-//         await db.syncDelete(sql)
-//     } catch (error) {
-//         // 忽略报错
-//     }
-// }
+    // "pilimi-zlib2-21400000-21489999"
+*/
