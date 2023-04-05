@@ -7,7 +7,7 @@ const db = new Db()
 // const downloadPath = 'C:\\Users\\cuizi\\Documents\\'
 // const newParh = 'C:\\Users\\cuizi\\Documents\\zhao-shu'
 
-const downloadPath = 'D:\\'
+const downloadPath = 'D:'
 const newParh = 'F:\\'
 
 var files = [
