@@ -13,8 +13,8 @@ const newParh = 'F:\\'
 var files = [
     // "pilimi-zlib2-18510000-18609999",
     // "pilimi-zlib2-21320000-21399999"
-    "pilimi-zlib2-18320000-18399999",
-    "pilimi-zlib2-22100000-22119999"
+    // "pilimi-zlib2-18320000-18399999",
+    // "pilimi-zlib2-22100000-22119999"
 ]
 
 var filesLen = files.length
